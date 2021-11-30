@@ -22,6 +22,7 @@
 + Front-End project
 
 	+ Run `cd FrontEnd`	
+	+ Run `npm install`
 	+ Run `npm i -g aurelia-cli`		
 	    + Run `au run --open`	
 	
