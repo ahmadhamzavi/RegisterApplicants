@@ -1,64 +1,55 @@
-﻿using ApplicatonProcess.Data;
-using ApplicatonProcess.Domain;
-using ApplicatonProcess.Domain.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using ApplicationProcess.Service;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Filters;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApplicatonProcess.Web
+namespace ApplicationProcess.Web
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class ApplicantController : Controller
     {
-        ApplicantValidator applicantValidator;
-        IRepository<Applicant, int> _applicantService;
-        public ApplicantController(IRepository<Applicant, int> applicantService)
+        private readonly IApplicantService _applicantService;
+        public ApplicantController(IApplicantService applicantService)
         {
             _applicantService = applicantService;
-            applicantValidator = new ApplicantValidator();
         }
         /// <summary>         
-        /// POST for Creating an Object – returning an 201 on successful creation of the object and the url were the object can be called
+        /// POST for Creating an Object –> returning an 201 on successful creation of the object
         /// </summary>
-        /// <param name="applicant"></param>
+        /// <param name="applicantDto"></param>
         /// <returns></returns>
         [HttpPost]
-        [SwaggerRequestExample(typeof(Applicant), typeof(ApplicantExample))]                
-        public async Task<IActionResult> Create([FromBody]Applicant applicant)
+        [SwaggerRequestExample(typeof(ApplicantDto), typeof(ApplicantExample))]
+        public async Task<IActionResult> Create([FromBody] ApplicantDto applicantDto)
         {
-            var validation = (await applicantValidator.ValidateAsync(applicant));
+            var result = await _applicantService.CreateAsync(applicantDto);
 
-            if (validation.IsValid)
+            if (result.Success)
             {
-                applicant.Id = await _applicantService.CreateAsync(applicant);
-                return Ok(applicant.Id);
+                return Ok(result.Data);
             }
-            return BadRequest(validation.Errors);
+            return BadRequest(result.Errors);
         }
 
         /// <summary>        
-        /// GET with id parameter – to ask for an object by id
+        /// GET with id parameter –> to ask for an object by id
         /// </summary>
-        /// <param name="applicant"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]                
-        public async Task<Applicant> Get(int id)
+        [HttpGet("{id}")]
+        public async Task<ApplicantDto> Get(int id)
         {
             return await _applicantService.GetAsync(id);
         }
         /// <summary>        
         /// GET All
         /// </summary>
-        /// <param name="applicant"></param>
         /// <returns></returns>
-        [HttpGet]                
-        public async Task<List<Applicant>> GetAll()
+        [HttpGet]
+        public async Task<List<ApplicantDto>> GetAll()
         {
             return await _applicantService.GetAllAsync();
         }
@@ -68,29 +59,22 @@ namespace ApplicatonProcess.Web
         /// <param name="applicant"></param>
         /// <returns></returns>
         [HttpPut]
-        [SwaggerRequestExample(typeof(Applicant), typeof(ApplicantExample))]                
-        public async Task<IActionResult> Put([FromBody] Applicant applicant)
+        [SwaggerRequestExample(typeof(ApplicantDto), typeof(ApplicantExample))]
+        public async Task<IActionResult> Put([FromBody] ApplicantDto applicantDto)
         {
-            if (applicantValidator.Validate(applicant).IsValid)
-            {
-                return Ok(await _applicantService.UpdateAsync(applicant));
-            }
+            var result = await _applicantService.UpdateAsync(applicantDto);
+            if (result) { return Ok(); }
             return BadRequest();
         }
         /// <summary>        
         /// DELETE – to delete the object with the given id
         /// </summary>
-        /// <param name="applicant"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete]           
-        public async Task<IActionResult> Delete([FromBody]Applicant app)
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
         {
-            var applicant = await Get(app.Id);
-            if (applicant == null)
-            {
-                return BadRequest("Not found");
-            }
-            await _applicantService.DeleteAsync(applicant);
+            await _applicantService.DeleteAsync(id);
             return Ok();
         }
     }

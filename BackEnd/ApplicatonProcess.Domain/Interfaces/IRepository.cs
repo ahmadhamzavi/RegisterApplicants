@@ -1,18 +1,18 @@
-﻿using ApplicatonProcess.Domain.Models;
+﻿using ApplicationProcess.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicatonProcess.Domain.Interfaces
+namespace ApplicationProcess.Domain.Interfaces
 {
-    public interface IRepository<TEntity,TPrimary> where TEntity:BaseEntity<TPrimary>
+    public interface IRepository<TEntity,TPrimaryKey> where TEntity:BaseEntity<TPrimaryKey>
     {
-        public Task<TPrimary> CreateAsync(TEntity entity);
-        public Task<TEntity> GetAsync(TPrimary Id);
+        public Task<TPrimaryKey> CreateAsync(TEntity entity);
+        public Task<TEntity> GetAsync(TPrimaryKey Id);
         public Task<List<TEntity>> GetAllAsync();
         public Task<bool> UpdateAsync(TEntity entity);
-        public Task<bool> DeleteAsync(TEntity entity);
+        public Task DeleteAsync(TEntity entity);
 
     }
 }

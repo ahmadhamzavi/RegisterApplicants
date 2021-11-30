@@ -1,11 +1,11 @@
-﻿using ApplicatonProcess.Domain;
+﻿using ApplicationProcess.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApplicatonProcess.Data
+namespace ApplicationProcess.Data
 {
     public class ApplicationDBContext : DbContext
     {

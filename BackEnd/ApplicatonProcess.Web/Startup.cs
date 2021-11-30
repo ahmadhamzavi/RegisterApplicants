@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ApplicatonProcess.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,10 +8,13 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 using Microsoft.EntityFrameworkCore;
-using ApplicatonProcess.Domain.Interfaces;
-using ApplicatonProcess.Data;
+using ApplicationProcess.Data;
+using ApplicationProcess.Service;
+using ApplicationProcess.Domain.Interfaces;
+using ApplicationProcess.Domain;
+using AutoMapper;
 
-namespace ApplicatonProcess.Web
+namespace ApplicationProcess.Web
 {
     public class Startup
     {
@@ -39,7 +36,8 @@ namespace ApplicatonProcess.Web
              .CreateLogger();
 
             services.AddDbContext<ApplicationDBContext>(options => options.UseInMemoryDatabase(databaseName: "Applications"));
-            services.AddScoped<IRepository<Applicant, int>, ApplicantService>();
+            services.AddTransient<IRepository<Applicant, int>, ApplicantRepository>();
+            services.AddTransient<IApplicantService, ApplicantService>();
 
             services.AddMvc();
             services.AddSwaggerGen(c =>
@@ -58,6 +56,7 @@ namespace ApplicatonProcess.Web
             });
             services.AddSwaggerExamplesFromAssemblyOf<ApplicantExample>();
             services.AddControllers().AddNewtonsoftJson();
+            services.AddAutoMapper(typeof(AutoMapping));
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,

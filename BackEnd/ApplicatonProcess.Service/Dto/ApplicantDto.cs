@@ -1,13 +1,8 @@
-﻿using FluentValidation;
-using ApplicationProcess.Domain.Models;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-
-namespace ApplicationProcess.Domain
+﻿namespace ApplicationProcess.Service
 {
-    public class Applicant:BaseEntity<int>
+    public class ApplicantDto
     {
+        public int Id { get; set; }
         //Name(string )
         public string Name { get; set; }
         //FamilyName(string )

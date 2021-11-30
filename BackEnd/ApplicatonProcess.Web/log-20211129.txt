@@ -1,0 +1,251 @@
+2021-11-29 19:09:31.669 +03:30 [Information] User profile is available. Using '"C:\Users\Ahmad\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-29 19:09:32.294 +03:30 [Information] In Development.
+2021-11-29 19:09:33.167 +03:30 [Information] Application started. Press Ctrl+C to shut down.
+2021-11-29 19:09:33.167 +03:30 [Information] Hosting environment: "Development"
+2021-11-29 19:09:33.168 +03:30 [Information] Content root path: "C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web"
+2021-11-29 19:09:33.299 +03:30 [Information] Request starting HTTP/2.0 GET https://localhost:44360/  
+2021-11-29 19:09:33.366 +03:30 [Information] HTTP "GET" "/" responded 404 in 0.4776 ms
+2021-11-29 19:09:33.433 +03:30 [Information] Request finished in 137.0528ms 404 
+2021-11-29 19:10:12.085 +03:30 [Information] User profile is available. Using '"C:\Users\Ahmad\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-29 19:10:12.307 +03:30 [Information] In Development.
+2021-11-29 19:10:12.947 +03:30 [Fatal] Unable to start Kestrel.
+System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date.
+To generate a developer certificate run 'dotnet dev-certs https'. To trust the certificate (Windows and macOS only) run 'dotnet dev-certs https --trust'.
+For more information on configuring HTTPS see https://go.microsoft.com/fwlink/?linkid=848054.
+   at Microsoft.AspNetCore.Hosting.ListenOptionsHttpsExtensions.UseHttps(ListenOptions listenOptions, Action`1 configureOptions)
+   at Microsoft.AspNetCore.Hosting.ListenOptionsHttpsExtensions.UseHttps(ListenOptions listenOptions)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2021-11-29 19:11:35.351 +03:30 [Information] User profile is available. Using '"C:\Users\Ahmad\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-29 19:11:35.497 +03:30 [Information] In Development.
+2021-11-29 19:11:36.172 +03:30 [Information] Now listening on: "https://localhost:5001"
+2021-11-29 19:11:36.253 +03:30 [Information] Now listening on: "http://localhost:5000"
+2021-11-29 19:11:36.298 +03:30 [Information] Application started. Press Ctrl+C to shut down.
+2021-11-29 19:11:36.306 +03:30 [Information] Hosting environment: "Development"
+2021-11-29 19:11:36.310 +03:30 [Information] Content root path: "C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web"
+2021-11-29 19:12:40.458 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/  
+2021-11-29 19:12:40.501 +03:30 [Information] HTTP "GET" "/" responded 404 in 0.4227 ms
+2021-11-29 19:12:40.511 +03:30 [Information] Request finished in 55.8072ms 404 
+2021-11-29 19:12:50.283 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/applicant  
+2021-11-29 19:12:50.290 +03:30 [Information] HTTP "GET" "/applicant" responded 404 in 0.0722 ms
+2021-11-29 19:12:50.296 +03:30 [Information] Request finished in 12.9434ms 404 
+2021-11-29 19:13:06.134 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/api/applicant  
+2021-11-29 19:13:06.141 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:13:06.211 +03:30 [Information] Route matched with "{action = \"GetAll\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[ApplicationProcess.Service.ApplicantDto]] GetAll()" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:13:06.623 +03:30 [Information] Entity Framework Core "3.1.4" initialized '"ApplicationDBContext"' using provider '"Microsoft.EntityFrameworkCore.InMemory"' with options: "StoreName=Applications "
+2021-11-29 19:13:06.789 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)" in 568.7308ms
+2021-11-29 19:13:06.794 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:13:06.799 +03:30 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ApplicationProcess.Service.ApplicantService.GetAllAsync() in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Service\ApplicantService.cs:line 61
+   at ApplicationProcess.Web.ApplicantController.GetAll() in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web\ApplicantController.cs:line 54
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-11-29 19:13:07.001 +03:30 [Information] Request finished in 867.4851ms 500 text/html; charset=utf-8
+2021-11-29 19:13:07.330 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2021-11-29 19:13:07.339 +03:30 [Information] HTTP "GET" "/favicon.ico" responded 404 in 0.0733 ms
+2021-11-29 19:13:07.347 +03:30 [Information] Request finished in 16.9818ms 404 
+2021-11-29 19:13:39.431 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/api/applicant/1  
+2021-11-29 19:13:39.435 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.Get (ApplicationProcess.Web)"'
+2021-11-29 19:13:39.456 +03:30 [Information] Route matched with "{action = \"Get\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[ApplicationProcess.Service.ApplicantDto] Get(Int32)" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:13:39.504 +03:30 [Information] Entity Framework Core "3.1.4" initialized '"ApplicationDBContext"' using provider '"Microsoft.EntityFrameworkCore.InMemory"' with options: "StoreName=Applications "
+2021-11-29 19:13:39.608 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.Get (ApplicationProcess.Web)" in 140.1141ms
+2021-11-29 19:13:39.612 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.Get (ApplicationProcess.Web)"'
+2021-11-29 19:13:39.614 +03:30 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ApplicationProcess.Service.ApplicantService.GetAsync(Int32 Id) in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Service\ApplicantService.cs:line 54
+   at ApplicationProcess.Web.ApplicantController.Get(Int32 id) in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web\ApplicantController.cs:line 45
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-11-29 19:13:39.660 +03:30 [Information] Request finished in 229.5279ms 500 text/html; charset=utf-8
+2021-11-29 19:13:55.402 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/api/applicant/1  
+2021-11-29 19:13:55.409 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.Get (ApplicationProcess.Web)"'
+2021-11-29 19:13:55.413 +03:30 [Information] Route matched with "{action = \"Get\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[ApplicationProcess.Service.ApplicantDto] Get(Int32)" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:13:55.435 +03:30 [Information] Entity Framework Core "3.1.4" initialized '"ApplicationDBContext"' using provider '"Microsoft.EntityFrameworkCore.InMemory"' with options: "StoreName=Applications "
+2021-11-29 19:13:55.446 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.Get (ApplicationProcess.Web)" in 21.8842ms
+2021-11-29 19:13:55.451 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.Get (ApplicationProcess.Web)"'
+2021-11-29 19:13:55.456 +03:30 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ApplicationProcess.Service.ApplicantService.GetAsync(Int32 Id) in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Service\ApplicantService.cs:line 54
+   at ApplicationProcess.Web.ApplicantController.Get(Int32 id) in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web\ApplicantController.cs:line 45
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-11-29 19:13:55.499 +03:30 [Information] Request finished in 97.4464ms 500 text/html; charset=utf-8
+2021-11-29 19:13:58.010 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/api/applicant  
+2021-11-29 19:13:58.013 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:13:58.016 +03:30 [Information] Route matched with "{action = \"GetAll\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[ApplicationProcess.Service.ApplicantDto]] GetAll()" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:13:58.027 +03:30 [Information] Entity Framework Core "3.1.4" initialized '"ApplicationDBContext"' using provider '"Microsoft.EntityFrameworkCore.InMemory"' with options: "StoreName=Applications "
+2021-11-29 19:13:58.034 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)" in 8.5554ms
+2021-11-29 19:13:58.041 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:13:58.043 +03:30 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ApplicationProcess.Service.ApplicantService.GetAllAsync() in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Service\ApplicantService.cs:line 61
+   at ApplicationProcess.Web.ApplicantController.GetAll() in C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web\ApplicantController.cs:line 54
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-11-29 19:13:58.087 +03:30 [Information] Request finished in 76.622ms 500 text/html; charset=utf-8
+2021-11-29 19:14:04.479 +03:30 [Information] Application is shutting down...
+2021-11-29 19:14:09.254 +03:30 [Information] User profile is available. Using '"C:\Users\Ahmad\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-29 19:14:09.495 +03:30 [Information] In Development.
+2021-11-29 19:14:10.142 +03:30 [Information] Now listening on: "https://localhost:5001"
+2021-11-29 19:14:10.156 +03:30 [Information] Now listening on: "http://localhost:5000"
+2021-11-29 19:14:10.160 +03:30 [Information] Application started. Press Ctrl+C to shut down.
+2021-11-29 19:14:10.162 +03:30 [Information] Hosting environment: "Development"
+2021-11-29 19:14:10.164 +03:30 [Information] Content root path: "C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web"
+2021-11-29 19:14:10.947 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/  
+2021-11-29 19:14:11.030 +03:30 [Information] HTTP "GET" "/" responded 404 in 1.4134 ms
+2021-11-29 19:14:11.044 +03:30 [Information] Request finished in 100.3367ms 404 
+2021-11-29 19:14:15.528 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/api/applicant  
+2021-11-29 19:14:15.535 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:14:15.601 +03:30 [Information] Route matched with "{action = \"GetAll\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[ApplicationProcess.Service.ApplicantDto]] GetAll()" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:22:13.413 +03:30 [Information] User profile is available. Using '"C:\Users\Ahmad\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-29 19:22:13.723 +03:30 [Information] In Development.
+2021-11-29 19:22:14.436 +03:30 [Information] Now listening on: "https://localhost:5001"
+2021-11-29 19:22:14.438 +03:30 [Information] Now listening on: "http://localhost:5000"
+2021-11-29 19:22:14.441 +03:30 [Information] Application started. Press Ctrl+C to shut down.
+2021-11-29 19:22:14.443 +03:30 [Information] Hosting environment: "Development"
+2021-11-29 19:22:14.445 +03:30 [Information] Content root path: "C:\Users\Ahmad\Desktop\AllMySampleCodes-master\AllMySampleCodes-master\Register Applicants (Aurlia_Asp.Net Core)\BackEnd\ApplicatonProcess.Web"
+2021-11-29 19:22:15.309 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/  
+2021-11-29 19:22:15.398 +03:30 [Information] HTTP "GET" "/" responded 404 in 1.1473 ms
+2021-11-29 19:22:15.413 +03:30 [Information] Request finished in 110.4177ms 404 
+2021-11-29 19:22:28.851 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/api/applicant  
+2021-11-29 19:22:28.859 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:22:28.920 +03:30 [Information] Route matched with "{action = \"GetAll\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[ApplicationProcess.Service.ApplicantDto]] GetAll()" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:22:33.641 +03:30 [Information] Entity Framework Core "3.1.4" initialized '"ApplicationDBContext"' using provider '"Microsoft.EntityFrameworkCore.InMemory"' with options: "StoreName=Applications "
+2021-11-29 19:22:33.832 +03:30 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[ApplicationProcess.Service.ApplicantDto, ApplicationProcess.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2021-11-29 19:22:34.042 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)" in 5109.5212ms
+2021-11-29 19:22:34.047 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:22:34.052 +03:30 [Information] Request finished in 5200.8769ms 200 application/json; charset=utf-8
+2021-11-29 19:22:41.021 +03:30 [Information] Request starting HTTP/2 GET https://localhost:5001/api/Applicant  
+2021-11-29 19:22:41.029 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:22:41.033 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:22:41.035 +03:30 [Information] Route matched with "{action = \"GetAll\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[ApplicationProcess.Service.ApplicantDto]] GetAll()" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:22:43.449 +03:30 [Information] Entity Framework Core "3.1.4" initialized '"ApplicationDBContext"' using provider '"Microsoft.EntityFrameworkCore.InMemory"' with options: "StoreName=Applications "
+2021-11-29 19:22:43.458 +03:30 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[ApplicationProcess.Service.ApplicantDto, ApplicationProcess.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2021-11-29 19:22:43.464 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)" in 2425.3717ms
+2021-11-29 19:22:43.470 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.GetAll (ApplicationProcess.Web)"'
+2021-11-29 19:22:43.478 +03:30 [Information] Request finished in 2457.3636ms 200 application/json; charset=utf-8
+2021-11-29 19:23:03.829 +03:30 [Information] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Applicant  
+2021-11-29 19:23:03.833 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:23:03.841 +03:30 [Information] Request finished in 12.3456ms 204 
+2021-11-29 19:23:03.846 +03:30 [Information] Request starting HTTP/2 POST https://localhost:5001/api/Applicant application/json;charset=UTF-8 194
+2021-11-29 19:23:03.848 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:23:03.849 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:23:03.874 +03:30 [Information] Route matched with "{action = \"Create\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ApplicationProcess.Service.ApplicantDto)" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:23:20.190 +03:30 [Information] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Applicant  
+2021-11-29 19:23:20.195 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:23:20.198 +03:30 [Information] Request finished in 9.3372ms 204 
+2021-11-29 19:23:20.208 +03:30 [Information] Request starting HTTP/2 POST https://localhost:5001/api/Applicant application/json;charset=UTF-8 194
+2021-11-29 19:23:20.209 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:23:20.211 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:23:20.215 +03:30 [Information] Route matched with "{action = \"Create\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ApplicationProcess.Service.ApplicantDto)" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:23:23.106 +03:30 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'.
+2021-11-29 19:23:23.139 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)" in 19255.7805ms
+2021-11-29 19:23:23.146 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:23:23.151 +03:30 [Information] Request finished in 19304.3946ms 400 application/json; charset=utf-8
+2021-11-29 19:25:17.738 +03:30 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'.
+2021-11-29 19:25:17.761 +03:30 [Information] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Applicant  
+2021-11-29 19:25:17.769 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:25:17.774 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)" in 117549.6226ms
+2021-11-29 19:25:17.778 +03:30 [Information] Request finished in 17.5201ms 0 
+2021-11-29 19:25:17.786 +03:30 [Information] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Applicant  
+2021-11-29 19:25:17.782 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:25:17.786 +03:30 [Information] Request starting HTTP/2 POST https://localhost:5001/api/Applicant application/json;charset=UTF-8 194
+2021-11-29 19:25:17.792 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:25:17.795 +03:30 [Information] Request finished in 117587.3209ms 400 application/json; charset=utf-8
+2021-11-29 19:25:17.798 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:25:17.803 +03:30 [Information] Request finished in 17.3474ms 204 
+2021-11-29 19:25:17.807 +03:30 [Information] Request starting HTTP/2 POST https://localhost:5001/api/Applicant application/json;charset=UTF-8 196
+2021-11-29 19:25:17.809 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:25:17.814 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:25:17.818 +03:30 [Information] Route matched with "{action = \"Create\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ApplicationProcess.Service.ApplicantDto)" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:25:17.820 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:25:17.829 +03:30 [Information] Route matched with "{action = \"Create\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ApplicationProcess.Service.ApplicantDto)" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:25:37.741 +03:30 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'.
+2021-11-29 19:25:37.990 +03:30 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'.
+2021-11-29 19:25:38.004 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)" in 20178.0505ms
+2021-11-29 19:25:38.027 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)" in 16398.64ms
+2021-11-29 19:25:38.034 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:25:38.050 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:25:38.066 +03:30 [Information] Request finished in 20279.6117ms 400 application/json; charset=utf-8
+2021-11-29 19:25:38.080 +03:30 [Information] Request finished in 20272.3223ms 400 application/json; charset=utf-8
+2021-11-29 19:27:15.630 +03:30 [Information] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Applicant  
+2021-11-29 19:27:15.632 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:27:15.635 +03:30 [Information] Request finished in 5.0953ms 204 
+2021-11-29 19:27:15.639 +03:30 [Information] Request starting HTTP/2 POST https://localhost:5001/api/Applicant application/json;charset=UTF-8 198
+2021-11-29 19:27:15.641 +03:30 [Information] CORS policy execution successful.
+2021-11-29 19:27:15.647 +03:30 [Information] Executing endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:27:15.649 +03:30 [Information] Route matched with "{action = \"Create\", controller = \"Applicant\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ApplicationProcess.Service.ApplicantDto)" on controller "ApplicationProcess.Web.ApplicantController" ("ApplicationProcess.Web").
+2021-11-29 19:27:31.864 +03:30 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]"'.
+2021-11-29 19:27:31.872 +03:30 [Information] Executed action "ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)" in 16217.1195ms
+2021-11-29 19:27:31.876 +03:30 [Information] Executed endpoint '"ApplicationProcess.Web.ApplicantController.Create (ApplicationProcess.Web)"'
+2021-11-29 19:27:31.879 +03:30 [Information] Request finished in 16239.6942ms 400 application/json; charset=utf-8

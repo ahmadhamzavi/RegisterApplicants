@@ -1,5 +1,5 @@
-﻿using ApplicatonProcess.Domain;
-using ApplicatonProcess.Domain.Interfaces;
+﻿using ApplicationProcess.Domain;
+using ApplicationProcess.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicatonProcess.Data
+namespace ApplicationProcess.Data
 {
-    public class ApplicantService : IRepository<Applicant, int>
+    public class ApplicantRepository : IRepository<Applicant, int>
     {
         private ApplicationDBContext _context;
-        public ApplicantService(ApplicationDBContext context)
+        public ApplicantRepository(ApplicationDBContext context)
         {
             _context = context;
         }
@@ -23,11 +23,10 @@ namespace ApplicatonProcess.Data
             return applicant.Id;
         }
 
-        public async Task<bool> DeleteAsync(Applicant applicant)
+        public async Task DeleteAsync(Applicant applicant)
         {
             _context.Applicants.Remove(applicant);
-            var result = await _context.SaveChangesAsync();
-            return result > 0;
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Applicant> GetAsync(int Id)

@@ -1,13 +1,14 @@
-﻿using ApplicatonProcess.Domain;
+﻿
+using ApplicationProcess.Service;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace ApplicatonProcess.Web
+namespace ApplicationProcess.Web
 {
-    public class ApplicantExample : IExamplesProvider<Applicant>
+    public class ApplicantExample : IExamplesProvider<ApplicantDto>
     {
-        public Applicant GetExamples()
+        public ApplicantDto GetExamples()
         {
-            return new Applicant()
+            return new ApplicantDto()
             {
                 Name = "13245",
                 FamilyName = "123465",

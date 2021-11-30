@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ApplicatonProcess.Domain.Models
+namespace ApplicationProcess.Domain.Models
 {
     public class BaseEntity<TPrimary>
     {

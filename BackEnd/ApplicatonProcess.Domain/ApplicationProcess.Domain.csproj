@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>ApplicationProcess.Domain</AssemblyName>
+    <RootNamespace>ApplicationProcess.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
