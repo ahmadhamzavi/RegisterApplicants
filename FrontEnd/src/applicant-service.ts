@@ -16,12 +16,9 @@ export class ApplicantService extends BaseService {
   updateApplicant(applicant) {
     return axios.put(this.url,applicant);
   }
-  deleteApplicant(applicant) {
-   return axios.delete(this.url, {
+  deleteApplicant(id) {
+   return axios.delete(`${this.url}?id=${id}`, {
       headers: {    
-      },
-      data: {
-        id:applicant.id
       }
     });
   }

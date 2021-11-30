@@ -221,7 +221,7 @@ export class ApplicantDetail {
       });
   }
   delete() {
-    this.applicantService.deleteApplicant(this.applicant).then((response) => {
+    this.applicantService.deleteApplicant(this.applicant.id).then((response) => {
       if (response.status == 200) {
         this.successDelete();
       }
